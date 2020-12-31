@@ -1,0 +1,301 @@
+Index: README.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># Taurus-skylark
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/README.md b/README.md
+--- a/README.md	(revision 00018553916b21da14d24b3957e72b1993ada4ed)
++++ b/README.md	(date 1605778943691)
+@@ -1,1 +1,1 @@
+-# Taurus-skylark
+\ No newline at end of file
++# 云雀 Taurus-skylark
+Index: .gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># dependencies\r\n/node_modules\r\n\r\n# production\r\n/dist\r\n\r\n# misc\r\n#yarn-error.log\r\n\r\n#/coverage\r\n#.idea\r\n#yarn.lock\r\npackage-lock.json\r\n#*bak\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.gitignore b/.gitignore
+--- a/.gitignore	(revision 00018553916b21da14d24b3957e72b1993ada4ed)
++++ b/.gitignore	(date 1605779339461)
+@@ -8,7 +8,7 @@
+ #yarn-error.log
+ 
+ #/coverage
+-#.idea
++.idea
+ #yarn.lock
+ package-lock.json
+ #*bak
+Index: src/main.js
+===================================================================
+diff --git a/src/main.js b/src/main.js
+deleted file mode 100644
+--- a/src/main.js	(revision 00018553916b21da14d24b3957e72b1993ada4ed)
++++ /dev/null	(revision 00018553916b21da14d24b3957e72b1993ada4ed)
+@@ -1,9 +0,0 @@
+-import Vue from 'vue'
+-import './styles/main.css'
+-import App from './app.vue'
+-
+-new Vue({
+-    el: '#app',
+-    template: '<App/>',
+-    components: { App }
+-})
+Index: src/app.vue
+===================================================================
+diff --git a/src/app.vue b/src/app.vue
+deleted file mode 100644
+--- a/src/app.vue	(revision 00018553916b21da14d24b3957e72b1993ada4ed)
++++ /dev/null	(revision 00018553916b21da14d24b3957e72b1993ada4ed)
+@@ -1,15 +0,0 @@
+-<template>
+-  <div id="app">
+-    {{msg}}
+-  </div>
+-</template>
+-<script>
+-export default {
+-  name:'app',
+-  data(){
+-    return {
+-      msg: 'hello skylark'
+-    }
+-  }
+-}
+-</script>
+Index: package.json
+===================================================================
+diff --git a/package.json b/package.json
+deleted file mode 100644
+--- a/package.json	(revision 00018553916b21da14d24b3957e72b1993ada4ed)
++++ /dev/null	(revision 00018553916b21da14d24b3957e72b1993ada4ed)
+@@ -1,38 +0,0 @@
+-{
+-  "name": "taurus-skylark",
+-  "version": "1.0.0",
+-  "description": "",
+-  "main": "index.js",
+-  "scripts": {
+-    "test": "echo \"Error: no test specified\" && exit 1",
+-    "dev": "webpack-dev-server  --hot-only --open",
+-    "build": "webpack"
+-  },
+-  "repository": {
+-    "type": "git",
+-    "url": "git+https://github.com/zhangshuo00/Taurus-skylark.git"
+-  },
+-  "author": "zhangshuo",
+-  "license": "ISC",
+-  "bugs": {
+-    "url": "https://github.com/zhangshuo00/Taurus-skylark/issues"
+-  },
+-  "homepage": "https://github.com/zhangshuo00/Taurus-skylark#readme",
+-  "devDependencies": {
+-    "babel-core": "^6.26.3",
+-    "babel-loader": "^8.2.1",
+-    "css-loader": "^5.0.1",
+-    "file-loader": "^6.2.0",
+-    "html-webpack-plugin": "^4.5.0",
+-    "style-loader": "^2.0.0",
+-    "url-loader": "^4.1.1",
+-    "vue-loader": "^15.9.5",
+-    "vue-template-compiler": "^2.6.12",
+-    "webpack": "^5.5.1",
+-    "webpack-cli": "^4.2.0",
+-    "webpack-dev-server": "^3.11.0"
+-  },
+-  "dependencies": {
+-    "vue": "^2.6.12"
+-  }
+-}
+Index: index.html
+===================================================================
+diff --git a/index.html b/index.html
+deleted file mode 100644
+--- a/index.html	(revision 00018553916b21da14d24b3957e72b1993ada4ed)
++++ /dev/null	(revision 00018553916b21da14d24b3957e72b1993ada4ed)
+@@ -1,11 +0,0 @@
+-<!DOCTYPE html>
+-<html lang="en">
+-<head>
+-    <meta charset="UTF-8">
+-    <title>云雀</title>
+-</head>
+-<body>
+-    <div id="app">
+-    </div>
+-</body>
+-</html>
+Index: webpack.config.js
+===================================================================
+diff --git a/webpack.config.js b/webpack.config.js
+deleted file mode 100644
+--- a/webpack.config.js	(revision 00018553916b21da14d24b3957e72b1993ada4ed)
++++ /dev/null	(revision 00018553916b21da14d24b3957e72b1993ada4ed)
+@@ -1,67 +0,0 @@
+-const path = require('path')
+-const HtmlWebpackPlugin = require('html-webpack-plugin')
+-const webpack = require('webpack')
+-
+-module.exports ={
+-    entry:'./src/main.js',
+-    output:{
+-        path:path.resolve(__dirname,'dist'),
+-        filename:"index.js"
+-    },
+-    module: {
+-        rules: [
+-            {
+-                test: /\.js$/,
+-                loader:"babel-loader",
+-                exclude: /node_modules/
+-            },
+-            {
+-                test: /\.css$/,
+-                loader: 'style-loader!css-loader'
+-            },
+-            {
+-                test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+-                loader: 'url-loader',
+-                options: {
+-                    limit: 10000
+-                }
+-            },
+-            {
+-                test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+-                loader: 'url-loader',
+-                options: {
+-                    limit: 10000
+-                }
+-            },
+-            {
+-                test: /\.vue$/,
+-                loader: 'vue-loader'
+-            }
+-        ]
+-    },
+-    resolve: {
+-        alias: {
+-            'vue$': 'vue/dist/vue.esm.js' // 'vue/dist/vue.common.js' for webpack 1
+-        }
+-    },
+-    plugins: [
+-        new HtmlWebpackPlugin({
+-            title: "",
+-            template: "index.html"
+-        }),
+-        new webpack.HotModuleReplacementPlugin(),
+-        new webpack.DefinePlugin({
+-            'process.env': {
+-                NODE_ENV: '"production"'
+-            }
+-        }),
+-        new webpack.optimize.UglifyJsPlugin({
+-            compress: {
+-                warnings: false
+-            }
+-        })
+-    ],
+-    devServer: {
+-        contentBase: "./dist"
+-    }
+-}
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"BranchesTreeState\">\r\n    <expand>\r\n      <path>\r\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"LOCAL_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n      </path>\r\n      <path>\r\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n      </path>\r\n      <path>\r\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"GROUP_NODE:origin\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n      </path>\r\n    </expand>\r\n    <select />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"52b9bad8-bcfb-40fb-9e73-09c1745cdf8c\" name=\"默认的\" comment=\"\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitToolBoxStore\">\r\n    <option name=\"projectConfigVersion\" value=\"2\" />\r\n    <option name=\"recentBranches\">\r\n      <RecentBranches>\r\n        <option name=\"branchesForRepo\">\r\n          <list>\r\n            <RecentBranchesForRepo>\r\n              <option name=\"branches\">\r\n                <list>\r\n                  <RecentBranch>\r\n                    <option name=\"branchName\" value=\"test\" />\r\n                    <option name=\"lastUsedInstant\" value=\"1605778625\" />\r\n                  </RecentBranch>\r\n                  <RecentBranch>\r\n                    <option name=\"branchName\" value=\"main\" />\r\n                    <option name=\"lastUsedInstant\" value=\"1605778624\" />\r\n                  </RecentBranch>\r\n                </list>\r\n              </option>\r\n              <option name=\"repositoryRootUrl\" value=\"file://$PROJECT_DIR$\" />\r\n            </RecentBranchesForRepo>\r\n          </list>\r\n        </option>\r\n      </RecentBranches>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1kV6i3xf7OimfnKQE87MBLaiTWQ\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"1\" id=\"新增\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"ASKED_SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"dart.analysis.tool.window.visible\" value=\"false\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$\" />\r\n    <property name=\"nodejs_package_manager_path\" value=\"npm\" />\r\n    <property name=\"settings.editor.selected.configurable\" value=\"preferences.sourceCode.Vue\" />\r\n    <property name=\"vue.rearranger.settings.migration\" value=\"true\" />\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"52b9bad8-bcfb-40fb-9e73-09c1745cdf8c\" name=\"默认的\" comment=\"\" />\r\n      <created>1605773535011</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1605773535011</updated>\r\n      <workItem from=\"1605773536448\" duration=\"3710000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 00018553916b21da14d24b3957e72b1993ada4ed)
++++ b/.idea/workspace.xml	(date 1609408660587)
+@@ -19,7 +19,16 @@
+     <select />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="52b9bad8-bcfb-40fb-9e73-09c1745cdf8c" name="默认的" comment="" />
++    <list default="true" id="52b9bad8-bcfb-40fb-9e73-09c1745cdf8c" name="默认的" comment="">
++      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/app.vue" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -72,6 +81,23 @@
+     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Vue" />
+     <property name="vue.rearranger.settings.migration" value="true" />
+   </component>
++  <component name="RunManager">
++    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
++      <package-json value="$PROJECT_DIR$/package.json" />
++      <command value="run" />
++      <scripts>
++        <script value="dev" />
++      </scripts>
++      <node-interpreter value="project" />
++      <envs />
++      <method v="2" />
++    </configuration>
++    <recent_temporary>
++      <list>
++        <item itemvalue="npm.dev" />
++      </list>
++    </recent_temporary>
++  </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+@@ -80,7 +106,9 @@
+       <option name="number" value="Default" />
+       <option name="presentableId" value="Default" />
+       <updated>1605773535011</updated>
+-      <workItem from="1605773536448" duration="3710000" />
++      <workItem from="1605773536448" duration="4919000" />
++      <workItem from="1605844229034" duration="2441000" />
++      <workItem from="1609407834947" duration="826000" />
+     </task>
+     <servers />
+   </component>
+@@ -97,5 +125,28 @@
+         </entry>
+       </map>
+     </option>
++    <option name="oldMeFiltersMigrated" value="true" />
++  </component>
++  <component name="WindowStateProjectService">
++    <state x="499" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605844322136">
++      <screen x="0" y="0" width="1536" height="864" />
++    </state>
++    <state x="499" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.864/-1440.173.1440.900@0.0.1536.864" timestamp="1605844322136" />
++    <state width="1516" height="218" key="GridCell.Tab.0.bottom" timestamp="1605844343452">
++      <screen x="0" y="0" width="1536" height="864" />
++    </state>
++    <state width="1516" height="218" key="GridCell.Tab.0.bottom/0.0.1536.864/-1440.173.1440.900@0.0.1536.864" timestamp="1605844343452" />
++    <state width="1516" height="218" key="GridCell.Tab.0.center" timestamp="1605844343451">
++      <screen x="0" y="0" width="1536" height="864" />
++    </state>
++    <state width="1516" height="218" key="GridCell.Tab.0.center/0.0.1536.864/-1440.173.1440.900@0.0.1536.864" timestamp="1605844343451" />
++    <state width="1516" height="218" key="GridCell.Tab.0.left" timestamp="1605844343451">
++      <screen x="0" y="0" width="1536" height="864" />
++    </state>
++    <state width="1516" height="218" key="GridCell.Tab.0.left/0.0.1536.864/-1440.173.1440.900@0.0.1536.864" timestamp="1605844343451" />
++    <state width="1516" height="218" key="GridCell.Tab.0.right" timestamp="1605844343451">
++      <screen x="0" y="0" width="1536" height="864" />
++    </state>
++    <state width="1516" height="218" key="GridCell.Tab.0.right/0.0.1536.864/-1440.173.1440.900@0.0.1536.864" timestamp="1605844343451" />
+   </component>
+ </project>
+\ No newline at end of file
