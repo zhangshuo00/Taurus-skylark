@@ -9,8 +9,8 @@ import locale from 'element-ui/lib/locale/lang/en' // lang i18n
 // import echarts from 'echarts'
 
 import App from './App'
-import store from './store'
-import router from './router'
+// import store from './store'
+// import router from './router'
 
 Vue.use(ElementUI, { locale })
 Vue.component('flipper', Flipper)
@@ -19,7 +19,7 @@ Vue.component('flipper', Flipper)
 
 new Vue({
   el: '#app',
-  router,
-  store,
+  // router,
+  // store,
   render: h => h(App)
 })

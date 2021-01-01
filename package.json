@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "author": "zhangshuo <easonzhang5002@gmail.com>",
   "scripts": {
-    "dev": "vue-cli-service serve --port 8888",
+    "dev": "vue-cli-service serve --port 8000",
     "build:prod": "vue-cli-service build",
     "build:stage": "vue-cli-service build --mode staging",
     "preview": "node build/index.js --preview",
