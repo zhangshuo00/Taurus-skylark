@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52b9bad8-bcfb-40fb-9e73-09c1745cdf8c" name="默认的" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/_2020_12_31_17_59____.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/在进行检出之前于_2020_12_31_17_59_取消提交了变更_[默认的]/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +123,11 @@
       <updated>1609421635240</updated>
       <workItem from="1609421636888" duration="4230000" />
       <workItem from="1609495559142" duration="621000" />
-      <workItem from="1609508865975" duration="3090000" />
+      <workItem from="1609508865975" duration="3303000" />
+      <workItem from="1609656301315" duration="2826000" />
+      <workItem from="1609764524031" duration="494000" />
+      <workItem from="1609765051511" duration="1134000" />
+      <workItem from="1610256081764" duration="557000" />
     </task>
     <servers />
   </component>
