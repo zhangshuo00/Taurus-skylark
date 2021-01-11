@@ -25,7 +25,7 @@ module.exports = {
       filename: 'index.html',
       // 当使用 title 选项时，
       // template 中的 title 标签需要是 <title><%= htmlWebpackPlugin.options.title %></title>
-      title: 'vue-typescript-template',
+      title: '云雀 | 知识共享平台',
       // 在这个页面中包含的块，默认情况下会包含
       // 提取出来的通用 chunk 和 vendor chunk。
       chunks: ['chunk-vendors', 'chunk-common', 'index']
@@ -42,7 +42,7 @@ module.exports = {
       postcss: {
         plugins: [
           autoprefixer(),
-          
+
           // px -> rem
           // pxtorem({
           //   rootValue: 75,
@@ -66,7 +66,7 @@ module.exports = {
           // })
         ]
       },
-      
+
       // 默认情况下 `sass` 选项会同时对 `sass` 和 `scss` 语法同时生效
       // 因为 `scss` 语法在内部也是由 sass-loader 处理的
       // 但是在配置 `prependData` 选项的时候
