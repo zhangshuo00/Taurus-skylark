@@ -77,11 +77,11 @@
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="14.15.1" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.14.20" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../personal-blog-vue" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="E:\git\Taurus-skylark\node_modules\prettier" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Vue" />
-    <property name="ts.external.directory.path" value="E:\git\Taurus-skylark\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="E:\JetBrains\WebStorm 2020.2.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -110,6 +110,8 @@
       <option name="presentableId" value="Default" />
       <updated>1605773535011</updated>
       <workItem from="1605773536448" duration="3710000" />
+      <workItem from="1610285224485" duration="968000" />
+      <workItem from="1610331893126" duration="607000" />
     </task>
     <servers />
   </component>
