@@ -1,3 +1,24 @@
-# 云雀 | 知识共享平台
+# project
 
-基于 vue3.0 + vite + typescript 的测试版本
+## Project setup
+```
+yarn install
+```
+
+### Compiles and hot-reloads for development
+```
+yarn serve
+```
+
+### Compiles and minifies for production
+```
+yarn build
+```
+
+### Lints and fixes files
+```
+yarn lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
