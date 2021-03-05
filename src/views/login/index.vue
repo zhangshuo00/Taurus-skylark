@@ -1,12 +1,16 @@
 <template>
-  <div class="login-container">
+  <Layout>
     {{ username }}
-  </div>
+  </Layout>
 </template>
 
 <script>
+import Layout from '@/layout'
 export default {
   name: 'Login',
+  components: {
+    Layout
+  },
   data() {
     return {
       username: 'zhangsan'
@@ -16,8 +20,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.login-container {
-  width: 100%;
-  height: 50%;
-}
+
 </style>
