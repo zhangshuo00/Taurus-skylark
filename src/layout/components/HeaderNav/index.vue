@@ -4,11 +4,34 @@
 
     <div class="right-menu">
       <el-menu mode="horizontal">
-        <el-menu-item index="1">发现</el-menu-item>
-        <el-menu-item index="2">消息</el-menu-item>
-        <el-menu-item index="3">关注</el-menu-item>
+        <el-menu-item index="1">
+          <i class="el-icon-location"></i>
+          <span>发现</span>
+        </el-menu-item>
+        <el-menu-item index="2">
+          <i class="el-icon-location"></i>
+          <span>关注</span>
+        </el-menu-item>
+        <el-menu-item index="3">
+          <i class="el-icon-location"></i>
+          <span>消息</span>
+        </el-menu-item>
       </el-menu>
     </div>
+
+    <div class="search-menu">
+      <el-input
+          placeholder="请输入内容"
+          v-model="inputSearch">
+        <i slot="prefix" class="el-input__icon el-icon-search"></i>
+      </el-input>
+    </div>
+
+    <div class="avatar-menu">
+      <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></el-avatar>
+    </div>
+
+    <el-button type="primary">写文章</el-button>
   </div>
 </template>
 
@@ -18,6 +41,11 @@ import { mapGetters } from 'vuex'
 export default {
   name: 'HeaderNav',
   components: {},
+  data() {
+    return {
+      inputSearch: ''
+    }
+  },
   computed: {},
   methods: {
     toggleSideBar() {
@@ -44,6 +72,10 @@ export default {
   .right-menu {
     height: 100%;
     line-height: 80px;
+  }
+
+  .search-menu {
+    width: 200px;
   }
 }
 

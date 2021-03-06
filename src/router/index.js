@@ -15,6 +15,12 @@ export const contantRoutes = [
     component: () => import('@/views/login/index'),
     hidden: true,
     name: '登录页'
+  },
+  {
+    path: '/home',
+    component: () => import('@/views/home/index'),
+    hidden: true,
+    name: '首页'
   }
 ]
 
