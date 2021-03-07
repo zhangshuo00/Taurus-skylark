@@ -1,6 +1,6 @@
 <template>
   <div class="login-contain">
-    <el-form ref="loginForm" class="login-form" label-position="left">
+    <el-form ref="loginForm" :model="loginInfo" :rules="loginRules" class="login-form" auto-complete="on" label-position="left">
       <div class="title-contain">
         <h3 class="title">登录云雀</h3>
       </div>
@@ -48,17 +48,45 @@
 </template>
 
 <script>
+import { validUsername } from "@/utils/validate"
 
 export default {
   name: 'Login',
   data() {
+    const validateUsername = (rule, value, callback) => {
+      if (!validUsername(value)) {
+        callback(new Error('Please enter the correct user name'))
+      } else {
+        callback()
+      }
+    }
+    const validatePassword = (rule, value, callback) => {
+      if (value.length < 6) {
+        callback(new Error('The password can not be less than 6 digits'))
+      } else {
+        callback()
+      }
+    }
     return {
       loginInfo: {
         username: 'zhangsan',
         password: '111111'
       },
+      loginRules: {
+        username: [{ required: true, trigger: 'blur', validator: validateUsername}],
+        password: [{ required: true, trigger: 'blur', validator: validatePassword}]
+      },
       loading: false,
-      passwordType: 'password'
+      passwordType: true,
+      redirect: undefined
+    }
+  },
+  watch: {
+    $route: {
+      handler: function(route) {
+        this.redirect = route.query && route.query.redirect
+      },
+      immediate: true
     }
   },
   methods: {
@@ -66,8 +94,10 @@ export default {
       this.$refs.loginForm.validate(valid => {
         if(valid) {
           this.loading = true
+          this.$router.push({ path: this.redirect || '/' })
+          this.loading = false
           // 调用 dispatch 修改 loginForm，并进入首页
-          // this.$store.dispatch('user/login', this.loginForm).then(() => {
+          // this.$store.dispatch('user/login', this.loginInfo).then(() => {
           //   this.$router.push({ path: this.redirect || '/' })
           //   this.loading = false
           // }).catch(() => {
@@ -80,11 +110,7 @@ export default {
       })
     },
     showPwd() {
-      if(this.passwordType === 'password') {
-        this.passwordType = ''
-      } else {
-        this.passwordType = 'password'
-      }
+      this.passwordType = !this.passwordType;
       this.$nextTick(() => {
         this.$refs.password.focus()
       })
