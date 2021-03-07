@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    {{ username }}
+    {{ title }}
   </Layout>
 </template>
 

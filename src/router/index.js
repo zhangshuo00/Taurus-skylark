@@ -3,12 +3,14 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-export const contantRoutes = [
+import Layout from '@/layout'
+
+export const constantRoutes = [
   {
     path: '/',
-    component: () => import('@/views/login/index'),
-    redirect: '/login',
-    name: '登录页'
+    component: Layout,
+    redirect: '/home',
+    name: '首页'
   },
   {
     path: '/login',
@@ -26,7 +28,7 @@ export const contantRoutes = [
 
 const createRouter = () => new Router({
   scrollBehavior: () => ({ y: 0 }),
-  routes: contantRoutes
+  routes: constantRoutes
 })
 
 const router = createRouter()
