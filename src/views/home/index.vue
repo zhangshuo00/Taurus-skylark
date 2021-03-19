@@ -1,27 +1,30 @@
 <template>
-  <Layout>
-    {{ title }}
-  </Layout>
+  <div class="home-container">
+    <div class="home-text">首页推荐: {{ name }}</div>
+  </div>
 </template>
 
 <script>
-import Layout from '@/layout'
+import { mapGetters } from 'vuex'
+
 export default {
   name: 'Home',
-  components: {
-    Layout
-  },
-  data() {
-    return {
-      title: '标题'
-    }
-  },
+  computed: {
+    ...mapGetters([
+      'name'
+    ])
+  }
 }
 </script>
 
 <style lang="scss" scoped>
-.home-container {
-  width: 100%;
-  height: 50%;
+.home {
+  &-container {
+    margin: 30px;
+  }
+  &-text {
+    font-size: 30px;
+    line-height: 46px;
+  }
 }
 </style>
