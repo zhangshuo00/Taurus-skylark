@@ -6,16 +6,6 @@
 
 <script>
 export default {
-  name: 'App',
-  data() {
-    return {}
-  },
-  created() {
-    // this.fetchData()
-  },
-  methods: {
-    // fetchData() {
-    // }
-  }
+  name: 'App'
 }
 </script>
