@@ -5,6 +5,12 @@
 </template>
 
 <script>
+/**
+ * 关注页首页
+ * @desc 显示关注的所有话题分类
+ * @author zhangshuo
+ * @date 2021-03-19
+ */
 export default {
   name: 'Subscriptions'
 }

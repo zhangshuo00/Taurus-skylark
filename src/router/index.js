@@ -35,19 +35,19 @@ export const constantRoutes = [
     component: Layout,
     redirect: '/example/table',
     name: 'Example',
-    meta: { title: 'Example', icon: 'el-icon-s-help' },
+    meta: { title: '消息', icon: 'el-icon-bell' },
     children: [
       {
         path: 'table',
         name: 'Table',
         component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: 'table' }
+        meta: { title: '评论', icon: 'el-icon-chat-dot-square' }
       },
       {
         path: 'tree',
         name: 'Tree',
         component: () => import('@/views/tree/index'),
-        meta: { title: 'Tree', icon: 'tree' }
+        meta: { title: '私信', icon: 'el-icon-message' }
       }
     ]
   },
@@ -60,7 +60,7 @@ export const constantRoutes = [
         path: 'index',
         name: 'Subscriptions',
         component: () => import('@/views/subscriptions/index'),
-        meta: { title: '关注', icon: 'el-icon-collection-tag' }
+        meta: { title: '话题', icon: 'el-icon-collection-tag' }
       }
     ]
   },
@@ -71,8 +71,8 @@ export const constantRoutes = [
     redirect: '/nested/menu1',
     name: 'Nested',
     meta: {
-      title: 'Nested',
-      icon: 'nested'
+      title: '设置',
+      icon: 'el-icon-s-operation'
     },
     children: [
       {
@@ -125,12 +125,23 @@ export const constantRoutes = [
   },
 
   {
+    path: 'user',
+    component: Layout,
+    children: [
+      {
+        path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
+        meta: { title: '我的', icon: 'el-icon-user' }
+      }
+    ]
+  },
+
+  {
     path: 'external-link',
     component: Layout,
     children: [
       {
         path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
-        meta: { title: 'External Link', icon: 'link' }
+        meta: { title: '写文章', icon: 'el-icon-edit-outline' }
       }
     ]
   },
