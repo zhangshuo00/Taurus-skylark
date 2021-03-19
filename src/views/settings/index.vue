@@ -1,19 +1,19 @@
 <template>
   <div>
-    评论
+    设置
   </div>
 </template>
 
 <script>
 /**
- * 评论页面
- * @desc 点击消息（导航栏），默认跳转至评论页面，显示用户收到的所有评论
+ * @name 设置页面
+ * @desc 用户基础设置、个人资料修改、账号管理
  * @author zhangshuo
  * @date 2021-03-19
  */
 
 export default {
-  name: 'Comments'
+  name: 'Settings'
 }
 </script>
 

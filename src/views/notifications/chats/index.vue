@@ -1,5 +1,7 @@
 <template>
-  <div></div>
+  <div>
+    私信
+  </div>
 </template>
 
 <script>
