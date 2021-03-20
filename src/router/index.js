@@ -93,14 +93,9 @@ export const constantRoutes = [
 
   // 写文章跳转到编辑器页面，在新标签页中打开链接
   {
-    path: 'external-link',
-    component: Layout,
-    children: [
-      {
-        path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
-        meta: { title: '写文章', icon: 'el-icon-edit-outline' }
-      }
-    ]
+    path: '/editor',
+    component: () => import('@/views/editor/index'),
+    meta: { title: '写文章', icon: 'el-icon-edit-outline' }
   },
 
   // 404 page must be placed at the end !!!
