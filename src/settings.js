@@ -1,6 +1,6 @@
 module.exports = {
 
-  title: '云雀|知识共享平台',
+  title: '知识共享平台后台管理系统',
 
   /**
    * @type {boolean} true | false

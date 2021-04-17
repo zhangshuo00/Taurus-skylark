@@ -4,7 +4,6 @@
 
       <div class="title-container">
         <h3 class="title">登录</h3>
-        <h3 class="title">注册</h3>
       </div>
 
       <el-form-item prop="username">
@@ -14,7 +13,7 @@
         <el-input
           ref="username"
           v-model="loginForm.username"
-          placeholder="用户名或邮箱"
+          placeholder="管理员ID"
           name="username"
           type="text"
           tabindex="1"
@@ -44,11 +43,6 @@
 
       <el-button :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogin">登录</el-button>
 
-<!--      <div class="tips">-->
-<!--        <span style="margin-right:20px;">username: admin</span>-->
-<!--        <span>提示</span>-->
-<!--      </div>-->
-
     </el-form>
   </div>
 </template>
@@ -56,7 +50,7 @@
 <script>
 /**
  * 登录页面
- * @desc 用户登录注册页面
+ * @desc 管理员登录页面
  * @author zhangshuo
  * @date 2021-03-19
  */
@@ -180,9 +174,9 @@ $cursor: #fff;
 </style>
 
 <style lang="scss" scoped>
-$bg:#2d3a4b;
-$dark_gray:#889aa4;
-$light_gray:#eee;
+$bg: #1b3950;
+$dark_gray: #889aa4;
+$light_gray: #eee;
 
 .login-container {
   min-height: 100%;
