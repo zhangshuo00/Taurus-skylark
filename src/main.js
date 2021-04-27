@@ -5,6 +5,8 @@ import 'normalize.css/normalize.css'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
+import * as echarts from 'echarts'
+
 import '@/styles/index.scss' // global css
 
 import App from './App'
@@ -14,6 +16,7 @@ import router from './router'
 import '@/icons' // icon
 import '@/permission' // permission control
 
+Vue.prototype.$echarts = echarts
 
 if (process.env.NODE_ENV === 'production') {
   const { mockXHR } = require('../mock')

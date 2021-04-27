@@ -1,14 +1,21 @@
 <template>
   <div class="home-container">
-    <div class="home-text">首页推荐: {{ name }}</div>
+    <div class="home-text">
+      平台数据统计展示: {{ name }}
+    </div>
+    <LineChart />
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
+import LineChart from '../../components/Home/LineChart'
 
 export default {
   name: 'Home',
+  components: {
+    LineChart
+  },
   computed: {
     ...mapGetters([
       'name'

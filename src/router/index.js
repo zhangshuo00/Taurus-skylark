@@ -26,7 +26,7 @@ export const constantRoutes = [
       path: 'home',
       name: 'Home',
       component: () => import('@/views/home/index'),
-      meta: { title: '推荐', icon: 'el-icon-mobile' }
+      meta: { title: '数据统计', icon: 'el-icon-pie-chart' }
     }]
   },
 
@@ -35,19 +35,19 @@ export const constantRoutes = [
     component: Layout,
     redirect: '/example/table',
     name: 'Example',
-    meta: { title: '消息', icon: 'el-icon-bell' },
+    meta: { title: '用户内容', icon: 'el-icon-tickets' },
     children: [
       {
         path: 'table',
         name: 'Table',
         component: () => import('@/views/table/index'),
-        meta: { title: '评论', icon: 'el-icon-chat-dot-square' }
+        meta: { title: '用户文章', icon: 'el-icon-reading' }
       },
       {
         path: 'tree',
         name: 'Tree',
         component: () => import('@/views/tree/index'),
-        meta: { title: '私信', icon: 'el-icon-message' }
+        meta: { title: '用户私信', icon: 'el-icon-message' }
       }
     ]
   },
@@ -60,7 +60,18 @@ export const constantRoutes = [
         path: 'index',
         name: 'Subscriptions',
         component: () => import('@/views/subscriptions/index'),
-        meta: { title: '话题', icon: 'el-icon-collection-tag' }
+        meta: { title: '用户信息', icon: 'el-icon-notebook-2' }
+      }
+    ]
+  },
+
+  {
+    path: 'user',
+    component: Layout,
+    children: [
+      {
+        path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
+        meta: { title: '管理员设置', icon: 'el-icon-user' }
       }
     ]
   },
@@ -125,23 +136,12 @@ export const constantRoutes = [
   },
 
   {
-    path: 'user',
-    component: Layout,
-    children: [
-      {
-        path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
-        meta: { title: '我的', icon: 'el-icon-user' }
-      }
-    ]
-  },
-
-  {
     path: 'external-link',
     component: Layout,
     children: [
       {
         path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
-        meta: { title: '写文章', icon: 'el-icon-edit-outline' }
+        meta: { title: '用户反馈', icon: 'el-icon-connection' }
       }
     ]
   },
